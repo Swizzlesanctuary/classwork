@@ -3,6 +3,8 @@ let zoomOutButton = document.getElementById('button2');
 let background = document.getElementById('background');
 let hideButton = document.getElementById('hide');
 let showButton = document.getElementById('show');
+let colorButton = document.getElementById('colorButton');
+let textColor = document.getElementById('textColor');
 
 zoomInButton.addEventListener('click', () => {
   background.classList.add('fullscreen');
@@ -19,3 +21,14 @@ showButton.addEventListener('click',()=>{
 hideButton.addEventListener('click',()=>{
   background.classList.add('hide');
 })
+
+
+let colors = ['pink', 'green', 'yellow'];
+let clickCount = 0;
+
+colorButton.addEventListener('click', () => {
+  const currentColor = colors[clickCount % colors.length];
+  textColor.style.color = currentColor;
+  textColor.textContent = currentColor;
+  clickCount++;
+});

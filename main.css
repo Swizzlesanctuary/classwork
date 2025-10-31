@@ -98,3 +98,27 @@ align-items: center;
     z-index: 1;
     border-radius: 0 !important;
 }
+
+
+#colorChange {
+    padding-top:10 px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: blue;
+}
+
+
+
+#colorButton {
+padding: 10px 15px;
+    margin-right: 10px;
+    background-color: #881b1b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;}
+
+#colorButton button:hover { background-color: #555; }
+
