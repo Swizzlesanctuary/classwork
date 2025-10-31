@@ -1,0 +1,100 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Work Sans', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#menu button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+
+#menu button:hover {
+    background-color: #555;
+}
+
+
+#hideShow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#hideShow button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+
+#hideShow button:hover {
+    background-color: #555;
+}
+
+.hide {
+    opacity: 0;              
+    pointer-events: none;   
+}
+
+
+#background {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.8s ease;
+    
+}
+
+
+.fullscreen {
+display: flex;
+justify-content: center;
+align-items: center;
+
+    top: 0;
+    left: 0;
+    width: 80vw !important;
+    height: 80vh !important;
+    z-index: 1;
+    border-radius: 0 !important;
+}
