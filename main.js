@@ -1,5 +1,11 @@
+const element = document.querySelector('#special');
+const elementBorder = document.querySelector('.alert');
+const elementred = document.querySelector('.alert.stop');
+const elementgo = document.querySelector('.alert.go');
 
-document.querySelector("h1").style.Color = "blue";
-document.querySelector("h2").style.backgroundColor = "blue";
-document.querySelector("h2").style.color = "white";
-document.querySelector("span").style.fontSize = "200%";
+element.style.backgroundColor = "yellow";
+elementBorder.style.border = '1px solid gray';
+elementred.style.backgroundColor = "red";
+elementgo.style.backgroundColor = "green";
+
+
