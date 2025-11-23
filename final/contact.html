@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ka">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>დაგვიკავშირდით</title>
+
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerContainer">
+            <img src="/img/logo.png" class="logo">
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <nav id="navMenu" class="navMenu">
+                <a href="index.html">მთავარი</a>
+                <a href="portfolio.html">ნამუშევრები</a>
+                <a href="about.html">ჩვენს შესახებ</a>
+                <a href="contact.html" class="active">კავშირი</a>
+                <a href="login.html">ავტორიზაცია</a>
+                <a href="register.html">რეგისტრაცია</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+    
+        <form id="contactForm" class="contact-form" novalidate>
+            <div class="contactContainer">
+            <div class="row">
+                <div class="field">
+                    <label for="firstName"> სახელი და გვარი </label>
+                    <input type="text" id="firstName" name="firstName" required maxlength="50" />
+                    <div class="error" data-for="firstName" aria-live="polite"></div>
+                </div>
+            </div>
+            <div class="field">
+                <label for="email">ელ. ფოსტა</label>
+                <input type="email" id="email" name="email" />
+                <div class="error" data-for="email" ></div>
+            </div>
+
+            <div class="field">
+                <label for="city">ქალაქი</label>
+                <select id="city" name="city" required>
+                    <option value="">აირჩიეთ ქალაქი</option>
+                    <option value="თბილისი">თბილისი</option>
+                    <option value="რუსთავი">რუსთავი</option>
+                    <option value="მარნეული">მარნეული</option>
+                    <option value="ბათუმი">ბათუმი</option>
+                </select>
+                <div class="error" data-for="city"></div>
+            </div>
+
+            <div class="field">
+                <label for="message">თქვენი მესიჯი</label>
+                <textarea id="message" name="message" rows="6" required minlength="10" maxlength="2000"
+                   ></textarea>
+                <div class="error" data-for="message" ></div>
+            </div>
+
+            <div class="actions">
+                <button type="submit" id="sendBtn">გაგზავნა</button>
+    
+            <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+        </div>
+    </form>
+
+
+      
+    </main>
+
+      <footer class="site-footer" role="contentinfo">
+            <div class="footer-inner">
+                <div class="contact">
+                    <a class="mail-link" id="mailLink" href="mailto:contact@homework.illustrations">
+                    <span>mailto:contact@homework.illustrations</span>
+                </a>
+
+                    <div class="meta">© <time id="year" datetime="2025">2025</time> Gvantsa Jishkariani</div>
+                </div>
+            </div>
+        </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

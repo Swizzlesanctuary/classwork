@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ka">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>სისტემაში შესვლა</title>
+
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerContainer">
+            <img src="/img/logo.png" class="logo">
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+               
+            </div>
+
+            <nav id="navMenu" class="navMenu">
+                <a href="index.html">მთავარი</a>
+                <a href="portfolio.html">ნამუშევრები</a>
+                <a href="about.html" >ჩვენს შესახებ</a>
+                <a href="contact.html">კავშირი</a>
+                <a href="login.html"class="active" >ავტორიზაცია</a>
+                <a href="register.html">რეგისტრაცია</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>სისტემაში შესვლა</h2>
+        <form id="loginForm">
+            <label for="username">სახელი</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">ფასვორდი</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">შესვლა</button>
+        </form>
+
+
+     
+    </main>
+
+       <footer class="site-footer" role="contentinfo">
+            <div class="footer-inner">
+                <div class="contact">
+                     <a class="mail-link" id="mailLink" href="mailto:contact@homework.illustrations">
+                    <span>mailto:contact@homework.illustrations</span>
+                </a>
+
+                    <div class="meta">© <time id="year" datetime="2025">2025</time> Gvantsa Jishkariani</div>
+                </div>
+            </div>
+        </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

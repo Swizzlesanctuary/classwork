@@ -1,0 +1,415 @@
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: white;
+    color: #000000;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+}
+
+
+nav a,
+.main-nav a {
+    color: #000000;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    max-width: 5000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#loginForm label {
+    margin-left: 4px;
+}
+
+#loginForm input,
+#loginForm button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+
+form {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 0.75rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.slide-img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.slideshow-container .top-btn button {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: darkblue;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+.site-footer {
+    padding: 18px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.footer-inner {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mail-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.mail-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.meta {
+    color: black;
+    font-size: 13px;
+}
+
+
+
+
+@media (max-width: 520px) {
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .meta {
+        align-self: flex-end;
+        width: 100%;
+        text-align: right;
+    }
+}
+
+
+
+
+
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 8900;
+}
+
+
+nav.navMenu {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    nav.navMenu {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        padding: 15px 20px;
+        border-radius: 10px;
+        gap: 15px;
+        display: none;
+        /* hidden by default */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.navMenu.open {
+        display: flex;
+        z-index: 89900;
+    }
+}
+
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 26px;
+    height: 3px;
+    background: black;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    nav.navMenu {
+        display: none;
+    }
+}
+
+
+
+nav.navMenu a.active,
+nav a.active,
+.main-nav a.active {
+    font-weight: 600;
+}
+
+
+
+
+/* contact*/
+
+.contact-form {
+    background: #f5c0c0;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.row {
+    display: flex;
+    gap: 6px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field label {
+    font-size: 0.8rem;
+
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field select,
+.field textarea {
+    padding: 10px 12px;
+    border: 1px solid #e2e2e2;
+    font-size: 0.5rem;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    box-shadow: 0 4px 14px rgba(11, 61, 145, 0.08);
+}
+
+
+
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+button {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background: black;
+    color: rgb(249, 246, 246);
+}
+
+button.secondary {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid #e6e6e6;
+    font-weight: 500;
+}
+
+.form-status {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    min-height: 22px;
+}
+
+.form-status.success {
+    color: green;
+}
+
+
+
+@media (max-width: 720px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+.portfolioContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 90vw;
+}
+
+
+.galleryContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.galleryContainer img {
+    width: 33%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+.galleryContainer a {
+    width: 33%;
+}
+
+.galleryContainer a img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+

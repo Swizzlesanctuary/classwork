@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ka">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>რეგისტრაცია</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerContainer">
+            <img src="/img/logo.png" class="logo">
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <nav id="navMenu" class="navMenu">
+                <a href="index.html">მთავარი</a>
+                <a href="portfolio.html">ნამუშევრები</a>
+                <a href="about.html">ჩვენს შესახებ</a>
+                <a href="contact.html">კავშირი</a>
+                <a href="login.html">ავტორიზაცია</a>
+                <a href="register.html" class="active">რეგისტრაცია</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>რეგისტრაცია</h2>
+
+        <form id="regForm">
+            <label for="name">სახელი</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">ელ. ფოსტა</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">პაროლი</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">რეგისტრაცია</button>
+        </form>
+    </main>
+
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="contact">
+                <a class="mail-link" id="mailLink" href="mailto:contact@homework.illustrations">
+                    <span>mailto:contact@homework.illustrations</span>
+                </a>
+
+                <div class="meta">© <time id="year" datetime="2025">2025</time> Gvantsa Jishkariani</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

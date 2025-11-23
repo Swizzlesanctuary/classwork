@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Homework Illustrators</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerContainer">
+            <img src="/img/logo.png" class="logo">
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <nav id="navMenu" class="navMenu">
+                <a href="index.html" class="active">მთავარი</a>
+                <a href="portfolio.html">ნამუშევრები</a>
+                <a href="about.html">ჩვენს შესახებ</a>
+                <a href="contact.html">კავშირი</a>
+                <a href="login.html">ავტორიზაცია</a>
+                <a href="register.html">რეგისტრაცია</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="slideshow-container">
+
+        
+        <a target="_blank" class="top-btn">
+            <button popovertarget="mypopover" onclick="showPopup()">გაინათლე თავი</button>
+        </a>
+
+        <div id="mypopover" popover>
+            <div id="joke"></div>
+        </div>
+
+        
+        <div class="mySlides">
+            <img src="/img/1.jpg" class="slide-img">
+        </div>
+
+        <div class="mySlides">
+            <img src="/img/3.jpg" class="slide-img">
+        </div>
+
+        <div class="mySlides">
+            <img src="/img/2.jpg" class="slide-img">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+
+
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="contact">
+                <a class="mail-link" id="mailLink" href="mailto:contact@homework.illustrations">
+                    <span>mailto:contact@homework.illustrations</span>
+                </a>
+                <div class="meta">© <time id="year" datetime="2025">2025</time> Gvantsa Jishkariani</div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
