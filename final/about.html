@@ -11,7 +11,10 @@
 <body>
     <header>
         <div class="headerContainer">
-            <img src="/img/logo.png" class="logo">
+            <a href="index.html">
+                <img src="/img/logo.png" class="logo">
+            </a>
+
             <div class="burger" id="burger">
                 <span></span>
                 <span></span>
@@ -56,9 +59,9 @@
 
         <label for="colorInput"></label>
         <input id="colorInput" type="text" placeholder="შეიყვანე შენი საყვარელი ფერი">
-        <button id="showBtn" type="button">მაჩვენე ინფორმაცია</button>
+        <button id="showBtn" type="button" onclick="showColorFacts()">მაჩვენე ინფორმაცია</button>
 
-        <div id="mypopover" role="region" >
+        <div id="mypopover" role="region">
             <div id="colorFacts"></div>
         </div>
 

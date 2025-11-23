@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById("navMenu");
 
     if (!burger || !navMenu) {
-       
+
         return;
     }
 
@@ -95,72 +95,72 @@ document.addEventListener('DOMContentLoaded', () => {
 //*kontaqti*//
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactForm');
-  const status = document.getElementById('formStatus');
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
 
-  const validators = {
-    firstLastName: v => v.trim().length >= 1 || "გთხოვთ შეიყვანოთ სახელი და გვარი.",
-    email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || "გთხოვთ შეიყვანოთ სწორი ელ.ფოსტა.",
-    city: v => v.trim().length > 0 || "გთხოვთ აირჩიოთ ქალაქი.",
-    message: v => v.trim().length >= 10 || "მესიჯი უნდა შედგებოდეს მინიმუმ 10 სიმბოლოსგან."
-  };
-
-
-
-  function showFieldError(name, message) {
-    const el = document.querySelector(`.error[data-for="${name}"]`);
-    if (el) el.textContent = message || '';
-  }
-
-  function clearErrors() {
-    document.querySelectorAll('.error').forEach(e => e.textContent = '');
-    status.textContent = '';
-    status.className = 'form-status';
-  }
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    clearErrors();
-
-    const data = {
-      firstName: form.firstName.value || '',
-      lastName: form.lastName.value || '',
-      email: form.email.value || '',
-      city: form.city.value || '',
-      message: form.message.value || ''
+    const validators = {
+        firstLastName: v => v.trim().length >= 1 || "გთხოვთ შეიყვანოთ სახელი და გვარი.",
+        email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || "გთხოვთ შეიყვანოთ სწორი ელ.ფოსტა.",
+        city: v => v.trim().length > 0 || "გთხოვთ აირჩიოთ ქალაქი.",
+        message: v => v.trim().length >= 10 || "მესიჯი უნდა შედგებოდეს მინიმუმ 10 სიმბოლოსგან."
     };
 
-    let hasError = false;
-    for (const key of Object.keys(validators)) {
-      const result = validators[key](data[key]);
-      if (result !== true) {
-        hasError = true;
-        showFieldError(key, result);
-      } else {
-        showFieldError(key, '');
-      }
+
+
+    function showFieldError(name, message) {
+        const el = document.querySelector(`.error[data-for="${name}"]`);
+        if (el) el.textContent = message || '';
     }
 
-    if (hasError) {
-      status.textContent = 'გთხოვთ შეავსოთ ფორმა სწორად.';
-      status.classList.add('error');
-      return;
+    function clearErrors() {
+        document.querySelectorAll('.error').forEach(e => e.textContent = '');
+        status.textContent = '';
+        status.className = 'form-status';
     }
 
-    // Simulate sending...
-    document.getElementById('sendBtn').disabled = true;
-    status.textContent = 'გაგზავნილია — იდებითი ემული...';
-    status.classList.remove('error');
-    status.classList.add('success');
+    form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        clearErrors();
 
-    // Simulate async send with timeout (replace with fetch to real endpoint)
-    setTimeout(() => {
-      // pretend success
-      status.textContent = 'თქვენი შეტყობინება წარმატებით გაიგზავნა. მადლობა!';
-      form.reset();
-      document.getElementById('sendBtn').disabled = false;
-    }, 800);
-  });
+        const data = {
+            firstName: form.firstName.value || '',
+            lastName: form.lastName.value || '',
+            email: form.email.value || '',
+            city: form.city.value || '',
+            message: form.message.value || ''
+        };
+
+        let hasError = false;
+        for (const key of Object.keys(validators)) {
+            const result = validators[key](data[key]);
+            if (result !== true) {
+                hasError = true;
+                showFieldError(key, result);
+            } else {
+                showFieldError(key, '');
+            }
+        }
+
+        if (hasError) {
+            status.textContent = 'გთხოვთ შეავსოთ ფორმა სწორად.';
+            status.classList.add('error');
+            return;
+        }
+
+        // Simulate sending...
+        document.getElementById('sendBtn').disabled = true;
+        status.textContent = 'გაგზავნილია — იდებითი ემული...';
+        status.classList.remove('error');
+        status.classList.add('success');
+
+        // Simulate async send with timeout (replace with fetch to real endpoint)
+        setTimeout(() => {
+            // pretend success
+            status.textContent = 'თქვენი შეტყობინება წარმატებით გაიგზავნა. მადლობა!';
+            form.reset();
+            document.getElementById('sendBtn').disabled = false;
+        }, 800);
+    });
 
 });
 
@@ -173,7 +173,7 @@ async function getJokeFromApi() {
     const joke = await data.json();
     return joke;
 }
- 
+
 function showPopup() {
     const buttonIsClosingThePopover = document.getElementById("mypopover").checkVisibility();
     if (buttonIsClosingThePopover) {
@@ -192,24 +192,31 @@ function updateJokeDivText(joke) {
 
 
 
-
 async function getColorFromApi(color) {
-    const data = await fetch("https://github.io/final/colors.json")
-    const colorFacts = await data.json();
-    const colorInfo = colorFacts[color];
-    if (colorInfo === undefined) {
+    const data = await fetch("https://raw.githubusercontent.com/Swizzlesanctuary/classwork/8464ddff4587f38e541194c2cf2d631ab2357b42/final/colors.json"); 
+    const json = await data.json();
+
+    const colorInfo = json.color_facts.find(
+        item => item.color === color
+    );
+
+    if (!colorInfo) {
         return { 
             color: "ვერ ვიპოვეთ ეს ფერი",
-            fact: "სხვა ფერი სცადე. მაგ:ლურჯი, წითელი..."
+            fact: "სხვა ფერი სცადე. მაგ: ლურჯი, წითელი..."
         };
     }
     return colorInfo;
 }
  
+
+
 function showColorFacts() {
-        getColorFromApi().then(updateColorFactsDivText);
+    const color = document.getElementById("colorInput").value;
+    getColorFromApi(color).then(updateColorFactsDivText);
 }
 
 function updateColorFactsDivText(colorFacts) {
-    document.getElementById("colorFacts").textContent = `${colorFacts.color} ${colorFacts.fact}`;
+    document.getElementById("colorFacts").textContent =
+        `${colorFacts.color} — ${colorFacts.fact}`;
 }
