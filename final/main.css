@@ -276,7 +276,8 @@ button.secondary {
 }
 
 .field.contactfield {
-    width: 500px;
+    min-width: 15rem;
+  
 }
 
 
