@@ -2,17 +2,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const burger = document.getElementById("burger");
     const navMenu = document.getElementById("navMenu");
+    let overlay = document.querySelector('.menu-overlay');
+
 
     if (!burger || !navMenu) {
-
         return;
-    }
-
-    let overlay = document.querySelector('.menu-overlay');
-    if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.className = 'menu-overlay';
-        document.body.appendChild(overlay);
     }
 
     function openMenu() {
@@ -23,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function closeMenu() {
-        navMenu.classList.remove('open');
-        overlay.classList.remove('visible');
         burger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
@@ -35,8 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         else openMenu();
     });
 
-    overlay.addEventListener('click', closeMenu);
-    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 });
 
 
